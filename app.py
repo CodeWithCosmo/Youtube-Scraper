@@ -47,10 +47,10 @@ def index():
                 for data in scrape:
                     writer.writerow(data)
             ###################!Stage 2######################
-            client = pymongo.MongoClient("mongodb://127.0.0.1:27017/")
-            db = client['YoutubeScrape']
-            scrape_data = db['LastFiveVideosData']
-            scrape_data.insert_many(scrape)
+            # client = pymongo.MongoClient("mongodb://127.0.0.1:27017/")                      
+            # mydb= client.YoutubeScrape
+            # mycollection = mydb.LastFiveVideos
+            # mycollection.insert_many(scrape)
             time.sleep(5)
             driver.quit()            
             return render_template('results.html', scrape=scrape[0:5])

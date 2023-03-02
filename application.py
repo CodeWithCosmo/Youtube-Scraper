@@ -26,6 +26,7 @@ def index():
             url = request.form['content']
             driver.get(url)
             driver.execute_script("window.scrollTo(0,400)", "")
+            time.sleep(3)
             soup = BeautifulSoup(driver.page_source, "html.parser")
             ###################!Stage 1######################
             scrape = []
@@ -35,7 +36,10 @@ def index():
                 view = (soup.find_all("div", {"id": "metadata"}))[i].find_all("span")[1].text
                 upload = (soup.find_all("div", {"id": "metadata"}))[i].find_all("span")[2].text
                 video_link = "https://www.youtube.com" + str((soup.find_all("a", {"id": "video-title-link"}))[i].get("href"))
-                thumbnail_link = (soup.find_all("img", {"class": "yt-core-image--fill-parent-height"}))[i].get("src")[0:50]
+                try:
+                    thumbnail_link = (soup.find_all("img", {"class": "yt-core-image--fill-parent-height"}))[i].get("src")[0:50]
+                except Exception as e:
+                    print(e)
                 mydict = {"Title": title, "Views": view, "Upload": upload,"Video Link": video_link, "Thumbnail Link": thumbnail_link}
                 scrape.append(mydict)           
             ###################!Stage 2######################

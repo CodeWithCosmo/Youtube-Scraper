@@ -37,7 +37,7 @@ def index():
                 upload = (soup.find_all("div", {"id": "metadata"}))[i].find_all("span")[2].text
                 video_link = "https://www.youtube.com" + str((soup.find_all("a", {"id": "video-title-link"}))[i].get("href"))
                 try:
-                    thumbnail_link = (soup.find_all("img", {"class": "yt-core-image--fill-parent-height"}))[i].get("src")[0:50]
+                    thumbnail_link = (soup.find_all("img", {"class": "yt-core-image--fill-parent-height"}))[i].get("src")[0:48]
                 except Exception as e:
                     print(e)
                 mydict = {"Title": title, "Views": view, "Upload": upload,"Video Link": video_link, "Thumbnail Link": thumbnail_link}

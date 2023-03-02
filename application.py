@@ -38,19 +38,7 @@ def index():
                 video_link = "https://www.youtube.com" + str((soup.find_all("a", {"id": "video-title-link"}))[i].get("href"))
                 thumbnail_link = (soup.find_all("img", {"class": "yt-core-image--fill-parent-height"}))[i].get("src")[0:50]
                 mydict = {"Title": title, "Views": view, "Upload": upload,"Video Link": video_link, "Thumbnail Link": thumbnail_link}
-                scrape.append(mydict)
-
-            ###################!Stage 2######################
-            with open('Scrape.csv', mode='w',encoding="utf-8", newline='') as file:
-                writer = csv.DictWriter(file, fieldnames=['Title', 'Views', 'Upload', 'Video Link', 'Thumbnail Link'])
-                writer.writeheader()
-                for data in scrape:
-                    writer.writerow(data)
-            ###################!Stage 2######################
-            # client = pymongo.MongoClient("mongodb://127.0.0.1:27017/")                      
-            # mydb= client.YoutubeScrape
-            # mycollection = mydb.LastFiveVideos
-            # mycollection.insert_many(scrape)
+                scrape.append(mydict)            
             time.sleep(5)
             driver.quit()            
             return render_template('results.html', scrape=scrape[0:5])

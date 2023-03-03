@@ -4,8 +4,6 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from flask_cors import cross_origin
 from flask import Flask, render_template, request
-from selenium.webdriver.edge.service import Service as EdgeService
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 application = Flask(__name__)  
 app = application
@@ -44,7 +42,7 @@ def index():
                 scrape.append(mydict)           
             ###################!Stage 2######################
             # client = pymongo.MongoClient("mongodb://127.0.0.1:27017/")  # Local Server
-            client = pymongo.MongoClient("mongodb+srv://lalit547:4W2lDPlTbwrbqkte@youtubescrape.shbwtmx.mongodb.net/?retryWrites=true&w=majority")
+            client = pymongo.MongoClient("mongodb+srv://lalit547:mongocloud@youtubescrape.shbwtmx.mongodb.net/?retryWrites=true&w=majority")
             mydb= client.YoutubeScrape
             mycollection = mydb.LastFiveVideos
             mycollection.insert_many(scrape)

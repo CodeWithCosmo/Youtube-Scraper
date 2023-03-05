@@ -1,11 +1,10 @@
-import time
 import pymongo
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from flask_cors import cross_origin
 from flask import Flask,render_template,request
-from selenium.webdriver.edge.service import Service as EdgeService
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
+
 application = Flask(__name__)  
 app = application
 
@@ -18,12 +17,11 @@ def home():
 @cross_origin()
 def index():
     if request.method == 'POST':
+        driver = webdriver.Edge(EdgeChromiumDriverManager().install())
         try:
-            driver = webdriver.Edge(service=EdgeService(executable_path=EdgeChromiumDriverManager().install()))
             url = request.form['content']
             driver.get(url)
             driver.execute_script("window.scrollTo(0,400)", "")
-            time.sleep(3)
             soup = BeautifulSoup(driver.page_source, "html.parser")
             ###################!Stage 1######################
             scrape = []
@@ -57,12 +55,11 @@ def index():
             mydb= client.YoutubeScrape
             mycollection = mydb.LastFiveVideos
             mycollection.insert_many(scrape)
-            time.sleep(5)
-            driver.quit()            
-            return render_template('results.html', scrape=scrape[0:5])
+            return render_template('results.html', scrape=scrape)
         except Exception as e:
-            print('The Exception message is: ', e)
-            return 'Something Wrong !'
+            return 'Something Wrong !' +str(e)
+        finally:
+            driver.quit()
     else:
         return render_template('index.html')    
 if __name__ == "__main__":

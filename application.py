@@ -1,10 +1,11 @@
+import time
 import pymongo
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from flask_cors import cross_origin
 from flask import Flask,render_template,request
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
-
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 application = Flask(__name__)  
 app = application
 
@@ -17,13 +18,19 @@ def home():
 @cross_origin()
 def index():
     if request.method == 'POST':
-        driver = webdriver.Edge(EdgeChromiumDriverManager().install())
         try:
-            url = request.form['content']
-            driver.get(url)
-            driver.execute_script("window.scrollTo(0,400)", "")
-            soup = BeautifulSoup(driver.page_source, "html.parser")
             ###################!Stage 1######################
+            handle = request.form['content']
+            url = f"https://www.youtube.com/@{handle}/videos"
+            service = Service(ChromeDriverManager().install())
+            options = webdriver.ChromeOptions()
+            options.add_argument("--headless")
+            driver = webdriver.Chrome(service=service,options=options)                        
+            driver.get(url)
+            driver.execute_script("window.scrollTo(0,500)", "")
+            time.sleep(2.5)
+            soup = BeautifulSoup(driver.page_source, "html.parser")
+            ###################!Stage 2######################
             scrape = []
             for i in range(5):
                 try:
@@ -50,14 +57,15 @@ def index():
 
                 mydict = {"Title": title, "Views": view, "Upload": upload,"Video Link": video_link, "Thumbnail Link": thumbnail_link}
                 scrape.append(mydict)           
-            ###################!Stage 2######################
-            client = pymongo.MongoClient("mongodb+srv://lalit547:mongocloud@youtubescrape.shbwtmx.mongodb.net/?retryWrites=true&w=majority")
+            ###################!Stage 3######################
+            client = pymongo.MongoClient("mongodb+srv://lalit547:mongocloud@youtubescrape.shbwtmx.mongodb.net/?retryWrites=true&w=majority")            
             mydb= client.YoutubeScrape
             mycollection = mydb.LastFiveVideos
             mycollection.insert_many(scrape)
+            ###################!Stage 4######################            
             return render_template('results.html', scrape=scrape)
         except Exception as e:
-            return 'Something Wrong !' +str(e)
+            return 'Something Wrong ! ' + str(e)
         finally:
             driver.quit()
     else:

@@ -6,7 +6,7 @@ body * {
 }
 
 .header {
-  background-color: #562196;
+  background-color: #c27d0e;
   color: white;
   font-size: 1.5em;
   padding: 1rem;
@@ -21,7 +21,7 @@ img {
 }
 
 .table-users {
-  border: 1px solid #5c7890;
+  border: 1px solid #9d4718;
   border-radius: 10px;
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
   max-width: calc(100% - 2em);
@@ -34,7 +34,7 @@ table {
   width: 120%;
 }
 table td, table th {
-  color: #2b686e;
+  color: #582ac3;
   padding: 10px;
 }
 table td {
@@ -77,7 +77,7 @@ table tr:nth-child(2n+1) {
     text-align: left;
   }
   td:not(:first-child):before {
-    color: #91ced4;
+    color: #334d18;
     content: '';
     display: block;
     left: 0;
@@ -162,8 +162,5 @@ table tr:nth-child(2n+1) {
   }
   .wide-column {
     width: 100%;
-  }
-  .a{
-    text-decoration: none;    
-  }
+  }  
 }

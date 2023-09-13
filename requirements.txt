@@ -4,4 +4,3 @@ pymongo
 selenium	
 Flask-Cors
 webdriver-manager
-

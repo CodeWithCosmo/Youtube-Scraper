@@ -4,12 +4,22 @@ body, html {
 }
 
 .content {
-    margin: 0 auto;
-    width: 400px;
+    padding: 200px;
+    width: 100%;
+    color: #881212;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    font-size: 20px;
 }
-
+.credit {
+    padding: 10px;
+    width: 100%;
+    color: #05020d;
+    border-radius: 3px;
+    font-size: 15px;
+}
 table, td, th {
-    border: 1px solid #aaa;
+    border: 1px solid #b3ca69;
 }
 
 table {
@@ -33,5 +43,22 @@ td {
 #content {
     width: 100%;
 }
-
+input[type="text"] {
+    text-align: center;
+    padding: 10px;
+    width: 50%;
+    margin-bottom: 10px;
+    border: 1px solid #060404;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #9d0d0d;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    cursor: pointer;
+  }
   

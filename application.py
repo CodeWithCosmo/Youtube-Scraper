@@ -58,7 +58,7 @@ def index():
                 mydict = {"Title": title, "Views": view, "Upload": upload,"Video Link": video_link, "Thumbnail Link": thumbnail_link}
                 scrape.append(mydict)           
             ###################!Stage 3######################
-            client = pymongo.MongoClient("mongodb+srv://lalit547:mongocloud@youtubescrape.shbwtmx.mongodb.net/?retryWrites=true&w=majority")            
+            client = pymongo.MongoClient("mongodb+srv://cwc:mongocloud@youtubescrapping.ryi6ibl.mongodb.net/?retryWrites=true&w=majority")            
             mydb= client.YoutubeScrape
             mycollection = mydb.LastFiveVideos
             mycollection.insert_many(scrape)
@@ -71,4 +71,4 @@ def index():
     else:
         return render_template('index.html')    
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=8000, debug=True)
+    app.run()

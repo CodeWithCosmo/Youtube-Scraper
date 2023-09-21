@@ -1,5 +1,6 @@
 bs4
 flask
+pandass
 python-dotenv
 py-dotenv
 pymongo

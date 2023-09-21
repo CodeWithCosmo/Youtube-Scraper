@@ -20,6 +20,3 @@ def scrape():
         raise CustomException(e, sys)
 
     return render_template('output.html',context=scrapes)
-     
-if __name__ == "__main__":
-    app.run(debug=True)

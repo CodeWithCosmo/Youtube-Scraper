@@ -27,8 +27,7 @@ def scrape_records(handle):
             video_link = "https://www.youtube.com" + str((soup.find_all("a", {"id": "video-title-link"}))[i].get("href"))
             thumbnail_link = (soup.find_all("img", {"class": "yt-core-image--fill-parent-height"}))[i].get("src")[0:48]
             
-            data = {
-                 "_id": i+1,
+            data = {              
                 "Title": title,
                 "Views": view,
                 "Upload": upload,

@@ -1,7 +1,7 @@
 import os
 import sys
+# import pandas as pd
 from py_dotenv import dotenv
-import pandas as pd
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from pymongo import MongoClient
@@ -36,8 +36,8 @@ def scrape_records(handle):
                 }
             
             scrapes.append(data)
-        csv = pd.DataFrame(scrapes)
-        csv.to_csv(f"{handle}.csv", index=False)
+        # csv = pd.DataFrame(scrapes)
+        # csv.to_csv(f"{handle}.csv", index=False)
         
     except Exception as e:
         lg.info('Handle not found')

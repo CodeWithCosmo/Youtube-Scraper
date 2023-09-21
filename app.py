@@ -14,7 +14,7 @@ def scrape():
     try:
         handle = request.form['content']
         scrapes = scrape_records(handle)
-        write_mongo(scrapes)
+        # write_mongo(scrapes)
 
     except Exception as e:
         raise CustomException(e, sys)

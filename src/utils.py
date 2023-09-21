@@ -4,7 +4,7 @@ import sys
 # from py_dotenv import dotenv
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from pymongo import MongoClient
+# from pymongo import MongoClient
 from src.exception import CustomException
 from src.logger import logging as lg
 
@@ -48,21 +48,21 @@ def scrape_records(handle):
         lg.info('Scraping Completed')
     
     return scrapes
-def write_mongo(data):
-    try:
-            lg.info('Connecting to MongoDB Cloud')
-            # dotenv.read_dotenv('.env')
-            # client = MongoClient(os.getenv('client'))
-            client = MongoClient("mongodb+srv://Kaggler:mongocloud@cluster0.d110adr.mongodb.net/")
-            lg.info('Connection successful')   
-            db = client['Youtube']
-            collection = db['Scrapes']
-            lg.info('Storing data into MongoDB Cloud') 
-            collection.insert_many(data)
-            lg.info('Data successfully stored in MongoDB Cloud')                       
+# def write_mongo(data):
+#     try:
+#             lg.info('Connecting to MongoDB Cloud')
+#             # dotenv.read_dotenv('.env')
+#             # client = MongoClient(os.getenv('client'))
+#             # client = MongoClient("mongodb+srv://user:password@cluster0.d110adr.mongodb.net/")
+#             lg.info('Connection successful')   
+#             db = client['Youtube']
+#             collection = db['Scrapes']
+#             lg.info('Storing data into MongoDB Cloud') 
+#             collection.insert_many(data)
+#             lg.info('Data successfully stored in MongoDB Cloud')                       
     
-    except Exception as e:
-        raise CustomException(e,sys)
+#     except Exception as e:
+#         raise CustomException(e,sys)
     
-    finally:
-         client.close() 
+#     finally:
+#          client.close() 

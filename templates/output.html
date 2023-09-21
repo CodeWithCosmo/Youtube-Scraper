@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Scraper API</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+</head>
+<body>
+    <div class="table-users">
+        <div class="header">Last 5 Post Updates</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Views</th>
+                    <th>Upload</th>
+                    <th>Video Link</th>
+                    <th style="text-align: left; width: 30";>Thumbnail Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in context %}
+                <tr>
+                    <td>{{i['Title']}}</td>
+                    <td>{{i['Views']}}</td>
+                    <td>{{i['Upload']}}</td>
+                    <td><a href="{{i['Video Link']}}" target="_blank">{{i['Video Link']}}</a></td>
+                    <td><a href="{{i['Thumbnail Link']}}" target="_blank">{{i['Thumbnail Link']}}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

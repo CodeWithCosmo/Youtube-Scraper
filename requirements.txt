@@ -1,6 +1,9 @@
 bs4
-Flask	
+flask
+python-dotenv
+py-dotenv
 pymongo
-selenium	
-Flask-Cors
-webdriver-manager
+waitress
+selenium
+
+-e .

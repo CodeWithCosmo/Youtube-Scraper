@@ -2,7 +2,10 @@
 
 ## The YouTube Scraper project is a versatile and powerful tool designed to extract valuable data and insights from YouTube, one of the world's largest video-sharing platforms. This project aims to automate the process of scraping data from YouTube using selenium and beautifulsoup and scrape details like video title, views, upload time, video link, thumbnail link, etc...
 
-> ## Try it out at [Youtube Scraper](https://youtube-scraper-8ryi.onrender.com)
+[![](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/05/youtube-data-scraping.png)]
+
+
+> ## Try it out at [Youtube Scraper](https://youtube-scraper-y0ij.onrender.com)
 
 * ## Applications Used
 1. [Python 3.9](https://www.python.org/)
@@ -17,7 +20,7 @@
 * ## **How to setup ?**
 1. ## Create a new environment
 ```
-conda create --name scrape python=3.9 -y
+conda create --name scrape python=3.10.4 -y
 ```
 2. ## Activate the newly created environment
 ```

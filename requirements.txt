@@ -2,7 +2,7 @@ bs4
 flask
 # python-dotenv
 # py-dotenv
-pymongo
+# pymongo
 gunicorn
 # waitress
 selenium

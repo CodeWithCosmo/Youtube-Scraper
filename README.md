@@ -10,7 +10,7 @@
 > ## Try it out at [Youtube Scraper](https://youtube-scraper-a0ve.onrender.com)
 
 * ## Applications Used
-1. [Python 3.9](https://www.python.org/)
+1. [Python 3.x](https://www.python.org/)
 2. [Anaconda](https://www.anaconda.com/)
 3. [VSCodeIDE](https://code.visualstudio.com/)
 4. [MongoDB](https://www.mongodb.com/)

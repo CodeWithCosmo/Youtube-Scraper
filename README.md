@@ -7,7 +7,7 @@
 
 
 
-> ## Try it out at [Youtube Scraper](https://youtube-scraper-y0ij.onrender.com)
+> ## Try it out at [Youtube Scraper](https://youtube-scraper-mft9.onrender.com)
 
 * ## Applications Used
 1. [Python 3.9](https://www.python.org/)
@@ -17,17 +17,3 @@
 5. [GitCLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
 6. [Github Account](https://github.com)
 7. [Render](https://render.com/)
-
-
-* ## **How to setup ?**
-1. ## Create a new environment
-```
-conda create --name scrape python=3.10
-```
-2. ## Activate the newly created environment
-```
-conda activate scrape
-```
-3. ## Install the requirements
-```
-pip install -r requirements.txt

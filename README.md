@@ -3,7 +3,7 @@
 ![](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/05/youtube-data-scraping.png)
 
 
-## The YouTube Scraper project is a versatile and powerful tool designed to extract valuable data and insights from YouTube, one of the world's largest video-sharing platforms. This project aims to automate the process of scraping data from YouTube using selenium and beautifulsoup and scrape details like video title, views, upload time, video link, thumbnail link, etc...
+## The YouTube Scraper project is a versatile and powerful tool designed to extract valuable data and insights from YouTube, one of the world's largest video-sharing platforms. This project aims to automate the process of scraping data from YouTube using selenium and beautifulsoup and scrape details like video title, views, upload time, video link, thumbnail link, etc... and finally dump them to MongoDB.
 
 
 

@@ -22,7 +22,7 @@
 * ## **How to setup ?**
 1. ## Create a new environment
 ```
-conda create --name scrape python=3.10.4 -y
+conda create --name scrape python=3.10
 ```
 2. ## Activate the newly created environment
 ```

@@ -10,12 +10,15 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">YouTube Scraper</h1>
+        <a href="https://github.com/CodeWithCosmo" target="_blank"  >
+            <img src="/static/images/logo.png" alt="CWC"  class="mx-auto d-block my-4" width="200">
+        </a>        
         <div class="row justify-content-center mt-4">
             <div class="col-md-6">
                 <form method="POST" action="/scrape">
                     <div class="form-group">
-                        <label for="content">Enter YouTube Handle:</label>
-                        <input type="text" class="form-control" id="content" name="content" required>
+                        <label for="content" style="font-weight: bold;">Enter YouTube Handle</label>
+                        <input type="text" class="form-control" id="content" placeholder="@" name="content" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Scrape</button>
                 </form>

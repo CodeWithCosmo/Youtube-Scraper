@@ -3,7 +3,8 @@ flask
 # python-dotenv
 # py-dotenv
 pymongo
-waitress
+gunicorn
+# waitress
 selenium
 
--e .
+# -e .

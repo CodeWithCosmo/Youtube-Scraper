@@ -1,6 +1,5 @@
 import os
 import sys
-# import pandas as pd
 from py_dotenv import dotenv
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -36,9 +35,7 @@ def scrape_records(handle):
                 }
             
             scrapes.append(data)
-        # csv = pd.DataFrame(scrapes)
-        # csv.to_csv(f"{handle}.csv", index=False)
-        
+
     except Exception as e:
         lg.info('Handle not found')
         raise CustomException(e, sys)

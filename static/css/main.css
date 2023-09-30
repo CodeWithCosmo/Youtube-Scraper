@@ -5,10 +5,13 @@ body {
     background-color: #ffffff;
     font-family: Arial, sans-serif;
 }
+p {
+    font-weight: 500;
+}
 
 .container {
-    background-color: #dcd7d7;
-    padding: 20px;
+    background-color: #cccbcb;
+    padding: 100px;
     border-radius: 500px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -48,3 +51,10 @@ h1 {
         padding: 10px;
     }
 }
+footer {
+    text-align: center;
+    width: 15%;
+    border-radius: 25px;
+    background-color: #333;
+    color: #fff;
+  }

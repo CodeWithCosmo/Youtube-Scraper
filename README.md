@@ -1,6 +1,6 @@
 # **`Youtube Scraping Project`**
 
-![UI](src/home.png)
+![Demo](src/demo.gif)
 
 * ## **Description**
 

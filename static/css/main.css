@@ -2,48 +2,110 @@
 
 /* Body styles */
 body {
-  background-color: #e1e0e0;
+  background-color: #f4f4f9;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-  background-color: #dcd7d7;
-  padding: 20px;
-  border-radius: 500px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 200px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+
+h1 {
+  color: #361604;
+  font-size: 2.5em;
+  font-weight: 800;
   text-align: center;
 }
 
-/* Heading styles */
-h1 {
-  color: #621111;
+img {
+  display: block;
+  margin: 20px auto;
 }
 
-/* Form styles */
+.row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  display: block;
 }
 
 .form-control {
   width: 100%;
   padding: 10px;
+  border-radius: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
 }
 
-.btn-primary {
-  background-color: #007bff;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  background-color: #2066b2;
+  font-weight: bold;
+  color: white;
+  padding: 8px 12px;
   border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.btn-primary:hover {
-  background-color: #031830;
+.loading {
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.2em;
 }
 
-/* Responsive styles for small screens */
-@media (max-width: 576px) {
+.loading::after {
+  content: "...";
+  animation: blink 1.5s infinite steps(5, start);
+}
+
+@keyframes blink {
+  0%,
+  20% {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: transparent;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
   .container {
-    padding: 10px;
+    padding: 0 10px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .btn {
+    width: fit-content;
   }
 }
